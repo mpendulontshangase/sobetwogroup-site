@@ -1,49 +1,65 @@
 /* General container styles */
+/* .home-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    border-bottom: 1px solid #3cfdfd;
+  } */
+  @keyframes moving-border {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 .home-container {
     font-family: Arial, sans-serif;
     color: #333;
-  }
+    position: relative;
+    /* padding-bottom: 5px; */
+}
+
+.home-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #3cfdfd, transparent);
+    background-size: 200% 100%;
+    animation: moving-border 2s linear infinite;
+}
+
   
   /* Hero Section */
   .hero {
     background-color: #1a202c;
     color: white;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     padding: 20px;
   }
+  /* .img {
+    width: 50; 
+    height: 50px;
+} */
+
   
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 4.0rem;
     margin-bottom: 10px;
   }
   
   .hero p {
     font-size: 1.2rem;
-   
   }
-  
-  .contact-btn {
-    background-color: #38a169;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .contact-btn:hover {
-    background-color: #2f855a;
-  }
-  
 
-  
   .services-container {
     display: flex;
     justify-content: space-between;
@@ -52,7 +68,7 @@
   }
   
   .service-box {
-    width: 30%;
+    width: 20%;
     padding: 20px;
     background: #3a404d;
     box-shadow: 0 4px 8px rgba(245, 240, 240, 0.1);
@@ -61,18 +77,25 @@
   }
   
   .service-box img {
-    height: 200px;
+    height: 100px;
     border-radius: 5px;
   }
   
   .service-box h3 {
     font-size: 1.5rem;
-    margin: 15px 0;
+    /* margin: 15px 0; */
   }
-  
+  .hero h4{
+    font-size: 1.5rem;
+    word-spacing: 6px;
+  }
   .service-box p {
     font-size: 1rem;
-    color: #3cfdfd;
+    color: #ffffff;
+    /* word-spacing: 8px;
+    letter-spacing: 1px; */
+    text-align: justify;
+
   }
   
   /* Responsive Design */
@@ -82,8 +105,50 @@
     }
   
     .service-box {
-      width: 100%;
+      /* width: 100%; */
     }
       
   }
+
+  /* Contact Card */
+.contact-card {
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 100px;
+  background: #1a202c;
+  color: white;
+  padding: 20px;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100;
+  margin: 0 auto;
+}
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #cbd5e0;
+}
+
+/* Icons */
+.contact-icon {
+  color: #3cfdfd;
+  font-size: 1.5rem;
+}
+.godown-arrow{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #3cfdfd;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
   

@@ -1,22 +1,25 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
+import React, { useState } from "react";  // ✅ Correct import
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+
 
 function App() {
+  const [contact, setContact] = useState(false);
+
   return (
     <>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
+    <Router>
+      <NavBar setContact={setContact} contact={contact} />
+      <Routes>
+        <Route path="/" element={<Home contact={contact} />} />
+        <Route path="/About" element={<About contact={contact}/>} />
+
+      </Routes>
+    </Router>
     </>
+ 
   );
 }
 

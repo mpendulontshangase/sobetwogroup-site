@@ -1,0 +1,40 @@
+/* General container styles */
+/* .contact-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+} */
+
+/* Contact Card */
+.contact-card {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 100px;
+    background: #1a202c;
+    color: white;
+    padding: 20px;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100;
+    margin: 0 auto;
+}
+
+/* Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #cbd5e0;
+}
+
+/* Icons */
+.contact-icon {
+    color: #3cfdfd;
+    font-size: 1.5rem;
+}
